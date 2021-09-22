@@ -68,20 +68,18 @@ There is a web app where an emergency worker can input a new message and get cla
 git clone https://github.com/BlickWinkel17/DisasterResponsePipeline.git
 ```
  
- While in the project's root directory disaster-response-pipeline run the ETL pipeline that cleans and stores data in database.
- 
+(Optional) While in the project's root directory disaster-response-pipeline run the ETL pipeline that cleans and stores data in database.
  ```sh
 python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
 ```
 
- Next, run the ML pipeline that trains the classifier and save it.
+(Optional)Next, run the ML pipeline that trains the classifier and save it.
 ```sh
 python model/train_classifier.py data/DisasterResponse.db model/classifier.pkl
 ```
-Next, change directory into the app directory and run the Python file run.py.
+Next, run the Python file run.py.
 ```sh
-cd app
-python run.py
+python app/run.py
 ```
 Finally, go to http://127.0.0.1:3001/ in your web-browser.
 Type a message input box and click on the Classify Message button to see the various categories that your message falls into.
