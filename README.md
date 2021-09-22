@@ -68,12 +68,12 @@ There is a web app where an emergency worker can input a new message and get cla
 git clone https://github.com/BlickWinkel17/DisasterResponsePipeline.git
 ```
  
-(Optional) While in the project's root directory disaster-response-pipeline run the ETL pipeline that cleans and stores data in database.
+(Optional, since DisasterResponse.db already exists) ETL pipeline that cleans and stores data in database.
  ```sh
 python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
 ```
 
-(Optional)Next, run the ML pipeline that trains the classifier and save it.
+(Optional, since classifier.pkl already exists)ML pipeline that trains the classifier and save it.
 ```sh
 python model/train_classifier.py data/DisasterResponse.db model/classifier.pkl
 ```
