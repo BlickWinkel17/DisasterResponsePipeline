@@ -5,6 +5,7 @@
 2. [Project Components](#project-components)
 3. [File Description](#file-description)
 4. [Installation](#installation)
+5. [Possible Improvements](#possible-improvements)
 
 ## Project Overview
 This project is part of the [Udacity Data Science Nano Degree Program](https://www.udacity.com/course/data-scientist-nanodegree--nd025). This project will analyze a [data set](https://github.com/BlickWinkel17/DisasterResponsePipeline/tree/master/data) containing real messages that were sent during disaster events. Those messages are sent from social media or from disaster response organizations. This project will build a ETL pipeline to load and process data, and a machine learning pipeline to classify those messages so as to send them to an appropriate disaster relief agency.
@@ -23,7 +24,7 @@ There are three components in the project.
 - Build a test processing and maching learning pipline
 - Use random forest classification and evaluate accuracy, precision and recall
 - Train and tunes a model using GridSearchCV
-- Notice that due to the size limit of a single file in Github, the output model is not a optimized one, for example, number of estimators and max_depth are both limited small. In __train_classifier.py__, a __tuning__ parameter is also provided in the __build_model__ function, so any one can train better models locally.
+- Notice that due to the size limit of a single file in Github, the output model is not a optimized one, for example, __number of estimators__ and __max_depth__ are both set small. In __train_classifier.py__, a __tuning__ parameter is also provided in the __build_model__ function, so any one can train better models locally.
 
 ### 3. Flask Web App
 There is a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data.
@@ -45,7 +46,6 @@ There is a web app where an emergency worker can input a new message and get cla
 	- process_data.py: ETL process to clean up data
 - \model
 	- train_classifier.py: classification code
-   	- custom_extractor.py: python package that build a class to extract disaster related words
 	- classifier.pkl: model saved as a pickle file
 ```
 
@@ -65,7 +65,7 @@ There is a web app where an emergency worker can input a new message and get cla
    
  ### Download and Installation
  ```sh
-git clone https://github.com/petitblue/disaster-response-pipeline.git
+git clone https://github.com/BlickWinkel17/DisasterResponsePipeline.git
 ```
  
  While in the project's root directory disaster-response-pipeline run the ETL pipeline that cleans and stores data in database.
@@ -85,6 +85,11 @@ python run.py
 ```
 Finally, go to http://127.0.0.1:3001/ in your web-browser.
 Type a message input box and click on the Classify Message button to see the various categories that your message falls into.
+
+## Possible Improvements
+
+### Precison and Recall
+As can be shown by the current model, precision and recall are generally over 80% and mostly more than 90%. However, since our data is heavily __balanced__ (for some categories there are few or even none different labels, as a result the prediction is simply a majority class), this result might sound more promising than it is actually.  Considering that for disaster response organizations, recall can be more important than precision, some methods to deal with unbalanced data and improve recall remain to be discussed.
 
 #### Screenshot of the web app
 ![Alt text](https://github.com/BlickWinkel17/DisasterResponsePipeline/blob/master/img/message%20classification.png)
