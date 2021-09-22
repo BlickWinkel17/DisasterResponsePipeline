@@ -23,6 +23,7 @@ There are three components in the project.
 - Build a test processing and maching learning pipline
 - Use random forest classification and evaluate accuracy, precision and recall
 - Train and tunes a model using GridSearchCV
+- Notice that due to the size limit of a single file in Github, the output model is not a optimized one, for example, number of estimators and max_depth are both limited small. In __train_classifier.py__, a __tuning__ parameter is also provided in the __build_model__ function, so any one can train better models locally.
 
 ### 3. Flask Web App
 There is a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data.
