@@ -84,9 +84,9 @@ def build_model(tuning=False):
                 ("tfidf", TfidfTransformer()),
                 ("multi_clf", MultiOutputClassifier(
                     RandomForestClassifier(
-                        n_estimators = 20,
-                        max_depth = 20,
-                        verbose=1)))
+                        n_estimators = 50,
+                        max_depth = 40,
+                        verbose=0)))
     ])
 
     if tuning:

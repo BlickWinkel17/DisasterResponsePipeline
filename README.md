@@ -7,23 +7,25 @@
 4. [Installation](#installation)
 
 ## Project Overview
-This project is part of the [Udacity Data Science Nano Degree Program](https://www.udacity.com/course/data-scientist-nanodegree--nd025). This project will analyze a [data set](https://github.com/petitblue/Udacity_Data_Science/tree/main/Project%202%20Disaster%20Response%20Pipeline/data) containing real messages that were sent during disaster events. Those messages are sent from social media or from disaster response organizations. This project will build a ETL pipeline to load and process data, and a machine learning pipeline to classify those messages so as to send them to an appropriate disaster relief agency.
+This project is part of the [Udacity Data Science Nano Degree Program](https://www.udacity.com/course/data-scientist-nanodegree--nd025). This project will analyze a [data set](https://github.com/BlickWinkel17/DisasterResponsePipeline/tree/master/data) containing real messages that were sent during disaster events. Those messages are sent from social media or from disaster response organizations. This project will build a ETL pipeline to load and process data, and a machine learning pipeline to classify those messages so as to send them to an appropriate disaster relief agency.
+
 ## Project Components
 There are three components in the project.
+
 ### 1. ETL Pipeline
 - Loads the message.csv and categories.csv files 
 - merges two datasets
 - clean data 
 - stores it in a SQLite database
+
 ### 2. ML Pipeline
 - Load cleaned data from database
 - Build a test processing and maching learning pipline
-- Used different models and evaluate accuracy
-- Apply feature union to improve model 
+- Use random forest classification and evaluate accuracy, precision and recall
 - Train and tunes a model using GridSearchCV
+
 ### 3. Flask Web App
 There is a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data.
-
 
 ## File Description
 ```sh
@@ -49,7 +51,7 @@ There is a web app where an emergency worker can input a new message and get cla
 ## Installation
 ### Devendencies :
    - [python (>=3.8)](https://www.python.org/downloads/)  
-   - [re](https://flask.palletsprojects.com/en/2.0.x/)  
+   - [re](https://docs.python.org/3/library/re.html)  
    - [pandas](https://pandas.pydata.org/)  
    - [numpy](https://numpy.org/)  
    - [sqlalchemy](https://www.sqlalchemy.org/)  
@@ -80,10 +82,9 @@ Next, change directory into the app directory and run the Python file run.py.
 cd app
 python run.py
 ```
-Finally, go to http://0.0.0.0:3001/ or http://localhost:3001/ in your web-browser.
+Finally, go to http://127.0.0.1:3001/ in your web-browser.
 Type a message input box and click on the Classify Message button to see the various categories that your message falls into.
 
 #### Screenshot of the web app
-![Alt text](https://github.com/petitblue/disaster-response-pipeline/blob/main/web_message_classifier.png)
-![Alt text](https://github.com/petitblue/disaster-response-pipeline/blob/main/genre_cts.png)
-![Alt text](https://github.com/petitblue/disaster-response-pipeline/blob/main/distribution_message_by_genre.png)
+![Alt text](https://github.com/BlickWinkel17/DisasterResponsePipeline/blob/master/img/message%20classification.png)
+![Alt text](https://github.com/BlickWinkel17/DisasterResponsePipeline/blob/master/img/overall%20view.png)
