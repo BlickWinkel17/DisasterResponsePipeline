@@ -48,7 +48,7 @@ def clean_data(df):
         categories[column] = categories[column].apply(lambda x: 1 if int(x[-1]) else 0)
         # convert column from string to numeric
         # categories[column] = categories[column].astype(int)
-        print(categories[column].value_counts())
+        # print(categories[column].value_counts())
 
     # drop the original categories column from `df`
     df = df.drop('categories',axis=1)
