@@ -45,10 +45,11 @@ def clean_data(df):
     categories.columns = category_colnames
     for column in categories:
         # set each value to be the last character of the string
-        categories[column] = categories[column].apply(lambda x: x[-1])
+        categories[column] = categories[column].apply(lambda x: 1 if int(x[-1]) else 0)
         # convert column from string to numeric
-        categories[column] = categories[column].astype(int)
-        
+        # categories[column] = categories[column].astype(int)
+        print(categories[column].value_counts())
+
     # drop the original categories column from `df`
     df = df.drop('categories',axis=1)
     # concatenate the original dataframe with the new `categories` dataframe
@@ -70,7 +71,7 @@ def save_data(df, database_filename):
         None
     """    
     engine = create_engine('sqlite:///{}'.format(database_filename))
-    df.to_sql(database_filename.split('/')[1].split('.db')[0], engine, index=False)
+    df.to_sql(database_filename.split('/')[1].split('.db')[0], engine, if_exists= 'replace', index=False)
 
 
 def main():
